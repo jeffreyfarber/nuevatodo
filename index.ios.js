@@ -24,6 +24,12 @@ export default class NuevaTodo extends Component {
     };
   }
 
+  renderRow(rowData) {
+    return (
+      <Text style={{backgroundColor: 'lavender'}}>{rowData}</Text>
+    );
+  }
+
   render() {
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     var dataSource = ds.cloneWithRows(this.state.todos);
@@ -43,7 +49,7 @@ export default class NuevaTodo extends Component {
 
         <ListView
           dataSource={dataSource}
-          renderRow={(rowData) => <Text>{rowData}</Text>}
+          renderRow={(rowData) => this.renderRow(rowData)}
         />
 
         <Text style={styles.instructions}>
