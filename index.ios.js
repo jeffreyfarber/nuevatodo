@@ -14,6 +14,7 @@ import {
   ListView,
   Button
 } from 'react-native';
+import TodoList from './todoList.js';
 
 export default class NuevaTodo extends Component {
   constructor(props) {
@@ -24,16 +25,7 @@ export default class NuevaTodo extends Component {
     };
   }
 
-  renderRow(rowData) {
-    return (
-      <Text style={{backgroundColor: 'lavender'}}>{rowData}</Text>
-    );
-  }
-
   render() {
-    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-    var dataSource = ds.cloneWithRows(this.state.todos);
-
     return (
       <View style={styles.container}>
         <TextInput
@@ -47,10 +39,7 @@ export default class NuevaTodo extends Component {
           title="Go!"
         />
 
-        <ListView
-          dataSource={dataSource}
-          renderRow={(rowData) => this.renderRow(rowData)}
-        />
+        <TodoList todos={this.state.todos} />
 
         <Text style={styles.instructions}>
           {this.state.todo}
