@@ -16,7 +16,10 @@ export default class MyNewComponent extends Component {
 
   renderRow(rowData) {
     return (
-      <Text style={{backgroundColor: 'lavender'}}>{rowData}</Text>
+      <View style={{width: 300, flexDirection: 'row'}}>
+        <Text style={{backgroundColor: 'lavender', flex: 2}}>{rowData}</Text>
+        <Text style={{flex: 1}}>Do this!</Text>
+      </View>
     );
   }
 
