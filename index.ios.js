@@ -32,6 +32,7 @@ export default class NuevaTodo extends Component {
           style={styles.todo}
           placeholder="New Todo"
           onChangeText={(text) => this.setState({todo: text})}
+          onSubmitEditing={() => this.setState({todos: this.state.todos.concat(this.state.todo)})}
         />
         <Button
           style={styles.searchButton}
