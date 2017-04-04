@@ -1,5 +1,22 @@
 # Nueva Todo: My First App!
 
+## Adding the &lt;TodoInput&gt; component
+###### Purpose
+- Encapsulate all input-related functions (textbox, submit button) in a separate components
+- Practice sending information from child component -> parent component
+- Simplify index.ios.js / index.android.js in the process!
+
+###### Recap of Changes
+1. Moved &lt;TextInput&gt;, &lt;Button&gt;, this.state.todo state variable, styles into new 'todoInput.js' file
+2. Child -> Parent communication:
+  - Parent component (index.ios.js/index.android.js) only handles only concatenating the new to-do into list of all todos.
+  - All user interaction, rendering, styling, etc. related to adding a new to-do is handled in new &lt;TodoInput&gt; component
+  - When rendering new &lt;TodoInput&gt;, the __only__ property is the function to concatenate the new to-do.
+3. propTypes
+  - TodoInput.propTypes defines all of the properties the component is expecting (for example this.props.propertyName)
+  - It helps to quickly see how to use the component, and provides you with a yellow warning if something looks wrong
+  - Read more and see other examples: https://facebook.github.io/react/docs/typechecking-with-proptypes.html
+
 ## Recap of in-class lesson
 
 ### Setting up the input textbox and state
